@@ -46,3 +46,4 @@ Afin de pouvoir ajouter des nouvelles catégories à un modèle déjà entrainé
 #### Tutorials for transfer learning
 
 1. [Transfer Learning](https://www.youtube.com/watch?v=LsdxvjLWkIY)
+2. [Transfer learning & fine-tuning](https://keras.io/guides/transfer_learning/)
