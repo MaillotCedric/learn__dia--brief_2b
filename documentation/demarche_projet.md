@@ -18,10 +18,10 @@ Après analyse des différentes [catégories](https://github.com/leferrad/tensor
 
 Afin d'avoir de bonnes performances pour le modèle enrichi, l'idée était de rechercher un nombre conséquent d'images pour chaque catégorie à ajouter.
 
-- Pizza
+- Cake
   - [Cakey Bakey](https://www.kaggle.com/datasets/rajkumarl/cakey-bakey)
   - [Cakes Dataset](https://www.kaggle.com/datasets/ishikanaik/cakes-dataset)
-- Cake
+- Pizza
   - [Pizza or Not Pizza ?](https://www.kaggle.com/datasets/carlosrunner/pizza-not-pizza)
   - [Pizza classification data](https://www.kaggle.com/datasets/projectshs/pizza-classification-data)
   - [Pizza vs Ice Cream](https://www.kaggle.com/datasets/hemendrasr/pizza-vs-ice-cream)
