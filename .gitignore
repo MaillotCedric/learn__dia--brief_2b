@@ -130,3 +130,6 @@ dmypy.json
 
 # datasets
 data/
+
+# modèles
+tutorials/mes_modeles/
