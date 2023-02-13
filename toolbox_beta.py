@@ -1,15 +1,3 @@
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.optimizers import Adam
-
-from matplotlib import pyplot as plt
-
-from PIL import Image
-
-import numpy as np
-
-import tensorflow as tf
-
 def new_model(model, include_top, input_shape, weights="imagenet"):
     return model(
         weights = weights,
@@ -28,6 +16,8 @@ def freeze(model, right_hand_limit=0):
     for layer in layers: # parcours des différentes couches du modèle
         layer.trainable = False # gel de la couche
 
+from keras.models import Sequential
+from keras.layers import Dense
 def new_cnn(cnn_model, nb_of_labels=2, new_layers=[]):
     """
     Args:
@@ -42,6 +32,7 @@ def new_cnn(cnn_model, nb_of_labels=2, new_layers=[]):
 
     return Sequential(sequence)
 
+import tensorflow as tf
 def get_datasets(folders_path, batch_size=4, validation_split=0.2, seed=1):
     train_dataset = tf.keras.utils.image_dataset_from_directory(
         folders_path,
@@ -66,9 +57,7 @@ def get_datasets(folders_path, batch_size=4, validation_split=0.2, seed=1):
 
     return train_dataset, validation_dataset
 
-def get_loss_function(nb_of_labels):
-    return tf.keras.losses.BinaryCrossentropy() if nb_of_labels == 2 else tf.keras.losses.SparseCategoricalCrossentropy()
-
+from keras.optimizers import Adam
 def compile_model(model, loss, metrics, learning_rate, optimizer=Adam):
     model.compile(
         loss = loss,
@@ -90,6 +79,7 @@ def train_model(model, train_data, validation_data, nb_of_epochs, callbacks=[]):
 
     return metrics_history
 
+from matplotlib import pyplot as plt
 def graph(metric, training_metrics):
     plt.plot(training_metrics.history[metric])
     plt.plot(training_metrics.history[f"val_{metric}"])
@@ -103,6 +93,7 @@ def graph(metric, training_metrics):
 
     return plt
 
+from PIL import Image
 def get_image(image_path, shape):
     image = Image.open(image_path).resize(shape)
 
@@ -113,6 +104,7 @@ def get_labels(datasets_path):
 
     return labels
 
+import numpy as np
 def predict_image(model, image_path, shape, datasets_path="data/images"):
     image = get_image(image_path, shape)
     np_image = np.asarray(image)
